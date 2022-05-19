@@ -1,7 +1,11 @@
-@include('layouts.head')
+@extends('layouts.layout')
+
 @include('layouts.navigation')
 
-<h2>{{ $set->date }}</h2>
+@section('content')
+
+
+    <h2>{{ $set->date }}</h2>
 @php
     $i = 1;
 @endphp
@@ -17,4 +21,8 @@
 <a href="/delete/{{$set->id}}">
     Удалить
 </a>
-@include('layouts.footer')
+
+
+
+
+@endsection
