@@ -22,7 +22,6 @@
             <div class="nav">
                 <a class="nav__logo" href="/">Wordlet</a>
                 <a class="nav__link" href="/">Главная</a>
-                    <a class="nav__link" href="#">Решения из учебников</a>
                 <a class="nav__link" href="/library">Библиотека</a>
                 <a class="nav__link" href="/create-set">Создать модуль</a>
             </div>
