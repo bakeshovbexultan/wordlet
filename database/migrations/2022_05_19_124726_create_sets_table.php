@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('sets', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->string('set_name');
+            $table->string('user_id');
             $table->timestamps();
         });
     }

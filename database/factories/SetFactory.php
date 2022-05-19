@@ -17,7 +17,8 @@ class SetFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'date' => $this->faker->date(),
+            'set_name' => $this->faker->word()
         ];
     }
 }

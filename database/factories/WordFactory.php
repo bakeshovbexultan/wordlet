@@ -17,7 +17,9 @@ class WordFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'english_word' => $this->faker->text(10),
+            'russian_word' => $this->faker->text(10),
+            'day_id' => $this->faker->numberBetween(1, 11),
         ];
     }
 }

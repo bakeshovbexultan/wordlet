@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Word extends Model
 {
     use HasFactory;
+
+    public function day() {
+        return $this->belongsTo(Set::class);
+    }
 }

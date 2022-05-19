@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Day;
+use App\Models\Set;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class DaysController extends Controller
+class SetController extends Controller
 {
     public function index() {
-        $days = Day::all();
-        return view('/library', ['days' => $days]);
+        $sets = Set::all();
+        return view('/library', ['sets' => $sets]);
     }
 
     public function delete($id) {
-        DB::table('days')->where('id', $id)->delete();
+        DB::table('sets')->where('id', $id)->delete();
         DB::table('words')->where('day_id', $id)->delete();
         return redirect('/library');
     }
