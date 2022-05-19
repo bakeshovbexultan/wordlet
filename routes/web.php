@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetController;
 use App\Http\Controllers\WordController;
@@ -35,6 +36,10 @@ require __DIR__.'/auth.php';
 
 Route::get('/library', [SetController::class, 'index']);
 
+Route::get('/logout', function () {
+    Auth::logout();
+});
+
 Route::get('/create-set', [WordController::class, 'create_set']);
 
 Route::post('/store_set', [WordController::class, 'store_set']);
@@ -44,5 +49,6 @@ Route::get('/word_list/{id}', [WordController::class, 'word_list'])->whereNumber
 Route::get('/delete/{id}', [SetController::class, 'delete'])->whereNumber('id');
 
 Route::get('/test', function(Request $request) {
-
+    $user = Auth::user()->id;
+    dd($user);
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Set;
 use App\Models\Word;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class WordController extends Controller
@@ -14,9 +15,10 @@ class WordController extends Controller
     }
 
     public function store_set(Request $request) {
-        $set_id = DB::table('days')->insertGetid([
-            'date' => $_POST['date'],
-            'set_name' => $_POST['set_name']
+        $set_id = DB::table('sets')->insertGetid([
+            'user_id' => Auth::user()->id,
+            'date' => $request->date,
+            'set_name' => $request->set_name
         ]);
 
         $num = 6;

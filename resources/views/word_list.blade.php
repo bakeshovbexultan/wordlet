@@ -1,11 +1,11 @@
 @include('layouts.head')
 @include('layouts.navigation')
 
-<h2>{{ $day->date }}</h2>
+<h2>{{ $set->date }}</h2>
 @php
     $i = 1;
 @endphp
-@foreach($day->words as $word)
+@foreach($set->words as $word)
     <div>
         {{ $i }}. {{$word['english_word']}} - {{$word['russian_word']}}
     </div>
@@ -14,7 +14,7 @@
     @endphp
 @endforeach
 <br>
-<a href="/delete/{{$day->id}}">
+<a href="/delete/{{$set->id}}">
     Удалить
 </a>
 @include('layouts.footer')
