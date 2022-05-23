@@ -22,11 +22,15 @@
         <a class="nav__link" href="/library">Библиотека</a>
         <a class="nav__link" href="/create-set">Создать модуль</a>
     </div>
+    @if(Auth::check())
     <div class="profile">
         <i class="fa-solid fa-bell"></i>
     </div>
+    @endif
 
-    @yield('auth')
+    @if(!Auth::check())
+        @yield('auth')
+    @endif
 
 </header>
 
