@@ -1,6 +1,5 @@
 @extends('layouts.layout')
 
-@include('layouts.navigation')
 
 @section('content')
 

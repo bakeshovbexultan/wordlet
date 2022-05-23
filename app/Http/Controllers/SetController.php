@@ -9,12 +9,14 @@ use Illuminate\Support\Facades\DB;
 
 class SetController extends Controller
 {
+    //TODO переименовать метод
     public function index() {
         $sets = Set::where('user_id', Auth::user()->id)->get();
 
         return view('/library', ['sets' => $sets]);
     }
 
+    //TODO переместить метод в другой класс
     public function delete($id) {
         DB::table('sets')->where('id', $id)->delete();
         DB::table('words')->where('set_id', $id)->delete();

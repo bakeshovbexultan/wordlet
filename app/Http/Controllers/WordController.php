@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class WordController extends Controller
 {
+    //TODO переместить метод в другой класс
     public function create_set() {
         return view('create-set');
     }
@@ -38,6 +39,7 @@ class WordController extends Controller
 
     }
 
+    //TODO переместить метод в другой класс
     public function word_list($id) {
         $set = Set::find($id);
         return view('word_list', ['set' => $set]);

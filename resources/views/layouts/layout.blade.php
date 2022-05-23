@@ -10,7 +10,7 @@
     <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon">
     <link type="Image/x-icon" href="/favicon.ico" rel="icon">
     <script src="{{ URL::asset('js/script.js') }}"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ URL::asset('https://use.fontawesome.com/releases/v5.15.4/css/all.css') }}" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
 
 </head>
 <body>
@@ -25,6 +25,8 @@
     <div class="profile">
         <i class="fa-solid fa-bell"></i>
     </div>
+
+    @yield('auth')
 
 </header>
 

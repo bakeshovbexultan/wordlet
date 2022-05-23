@@ -22,7 +22,7 @@ html,body{
     width: 100%;
     font-size: 100%;
     line-height: 1;
-    font-size: 14px;
+    /*font-size: 14px;*/
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -296,8 +296,7 @@ body {
     color: #FFCD1F;
 }
 
-.word__add:hover
-.word__add-text {
+.word__add:hover .word__add-text {
     border-bottom: 4px solid #FFCD1F;
 }
 
