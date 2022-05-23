@@ -44,4 +44,8 @@ class WordController extends Controller
         $set = Set::find($id);
         return view('word_list', ['set' => $set]);
     }
+
+    public function latest($id) {
+        return view('latest');
+    }
 }

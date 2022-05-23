@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+//Route::get('/', function () {
+//    return view('latest');
+//})->middleware(['auth']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/library', [SetController::class, 'index']);
@@ -27,6 +27,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/store_set', [WordController::class, 'store_set']);
     Route::get('/word_list/{id}', [WordController::class, 'word_list'])->whereNumber('id');
     Route::get('/delete/{id}', [SetController::class, 'delete'])->whereNumber('id');
+    Route::get('/latest/{id}', [WordController::class, 'latest']);
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
 
 //
@@ -39,3 +43,8 @@ Route::get('/logout', function () {
     Auth::logout();
 });
 
+//TODO Сверстать страницу регистрации
+//TODO Сверстать страницу логина
+//TODO Сверстать 404 страницу
+//TODO
+//TODO
