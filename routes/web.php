@@ -35,10 +35,6 @@ Route::middleware('auth')->group(function () {
 
 //
 
-Route::get('/test', function(Request $request) {
-
-});
-
 Route::get('/logout', function () {
     Auth::logout();
 });
@@ -46,5 +42,5 @@ Route::get('/logout', function () {
 //TODO Сверстать страницу регистрации
 //TODO Сверстать страницу логина
 //TODO Сверстать 404 страницу
-//TODO
+//TODO Если пользователь не зареган, то view welcome, если зареган то view latest показывать как главную
 //TODO
