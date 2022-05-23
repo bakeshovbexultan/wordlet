@@ -38,3 +38,4 @@ Route::get('/logout', function () {
 //TODO Сверстать 404 страницу
 //TODO Если пользователь не зареган, то view welcome, если зареган то view latest показывать как главную
 //TODO Сверстать страницу forgot-password
+//TODO Не применяются стили
