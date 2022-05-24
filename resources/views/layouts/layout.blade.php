@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
     <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon">
     <link type="Image/x-icon" href="/favicon.ico" rel="icon">
-    <script src="{{ URL::asset('js/script.js') }}"></script>
-    <link rel="stylesheet" href="{{ URL::asset('https://use.fontawesome.com/releases/v5.15.4/css/all.css') }}" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
-
+{{--    <script src="{{ URL::asset('js/script.js') }}"></script>--}}
+{{--    <link rel="stylesheet" href="{{ URL::asset('https://use.fontawesome.com/releases/v5.15.4/css/all.css') }}" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>--}}
+    <script src="{{ URL::asset('https://kit.fontawesome.com/2234da2371.js') }}" crossorigin="anonymous"></script>
 </head>
 <body>
 

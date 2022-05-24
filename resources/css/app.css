@@ -1,6 +1,6 @@
-/*@import 'tailwindcss/base';*/
-/*@import 'tailwindcss/components';*/
-/*@import 'tailwindcss/utilities';*/
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 *{
     padding: 0;
@@ -157,13 +157,6 @@ body {
     box-shadow: 2px 2px 15px 1px rgba(0, 0, 0, 0.2);
 
 }
-
-/* Library */
-
-.library__header {
-    font-size: 50px;
-}
-
 /* Create set */
 
 .create-set {
@@ -302,6 +295,10 @@ body {
 
 /* Library */
 
+.library__header {
+    font-size: 50px;
+}
+
 .set {
     margin-top: 100px;
 }
@@ -339,5 +336,110 @@ body {
     border-bottom: 3px solid #CEDAF3;
 }
 
+/* Word List */
 
+.word-list {
+    margin-top: 30px;
+}
 
+.word-list__header {
+
+}
+
+.word-list__header-text {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.word-list__learning {
+    border-radius: 10px;
+    background-color: #fff;
+    height: 400px;
+    margin-bottom: 40px;
+}
+
+.word-list__author {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.word-list__author--left {
+
+}
+
+.word-list__author--right {
+    display: flex;
+}
+
+.word-list__author-avatar {}
+.word-list__author-name {}
+
+.word-list__author--btn {
+    margin-left: 10px;
+}
+
+.word-list__author--btn-delete {
+    color: #000;
+}
+
+.word-list__words-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.word-list__words-header-text {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.word-list__words-sorting {}
+
+.word-list__words {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.word-list__word {
+    display: flex;
+    height: 100px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.word-list__word-term {
+    width: 500px;
+    border-right: 1px solid #000;
+    margin-right: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.word-list__word-description {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.word-list__word-change-btn {
+    margin-top: 20px;
+}
+
+.word-list__words--btn {
+    display: block;
+    width: 350px;
+    height: 60px;
+    background-color: #4255ff;
+    margin: 0 auto;
+    border-radius: 5px;
+
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+}
+
+.word-list__words--btn:hover {
+    background-color: #423ed8;
+}
