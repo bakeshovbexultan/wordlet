@@ -237,35 +237,26 @@ body {
 .word__area {
     display: flex;
     padding: 40px;
-
 }
 
-.word__termin {
+.word__term {
     display: block;
     width: 500px;
     border-bottom: 3px solid #000;
     margin-right: 20px;
     margin-bottom: 10px;
-
 }
 
-.word__termin {
-    display: block;
-    width: 500px;
-    border-bottom: 3px solid #000;
-    margin-bottom: 10px;
-}
-
-.word__termin--termin {
+.word__term--term {
     margin-right: 20px;
+}
+
+.word__term:focus {
+    border-bottom: 3px solid #FFCD1F;
 }
 
 .word__description {
     color: #939BB4;
-}
-
-.word__termin:focus {
-    border-bottom: 3px solid #FFCD1F;
 }
 
 .word__add {

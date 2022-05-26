@@ -22,8 +22,6 @@ class WordController extends Controller
             'set_name' => $request->set_name
         ]);
 
-        $num = 6;
-
         for ($i = 1; $i <= $request->word_count; $i++) {
             $valueEn = 'english_word' . $i;
             $valueRu = 'russian_word' . $i;
@@ -42,7 +40,8 @@ class WordController extends Controller
     //TODO переместить метод в другой класс
     public function word_list($id) {
         $set = Set::find($id);
-        return view('word_list', ['set' => $set]);
+        $word_count = Set::find($id)->words->count();
+        return view('word_list', ['set' => $set, 'word_count' => $word_count]);
     }
 
     public function latest($id) {

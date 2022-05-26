@@ -36,7 +36,7 @@
 
         <div class="word-list__words-header">
             <div class="word-list__words-header-text">
-                Термины в модуле (10)
+                Термины в модуле ({{ $word_count }})
             </div>
             <div class="word-list__words-sorting">
                 Ваша статистика

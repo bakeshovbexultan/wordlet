@@ -1,23 +1,26 @@
 @extends('layouts.layout')
 
-
 @section('content')
 
-<!-- Create Set -->
-
+<form action="/store_set" method="POST">
+    @csrf
 <div class="create-set">
     <div class="container container--center">
-        <form action="/store_set" method="POST">
-            @csrf
         <div class="create-set__header">
             <h2 class="create-set__header-text">Создать новый учебный модуль</h2>
             <input class="create-set__btn" type="submit" value="Создать">
         </div>
 
         <div class="create-set__title">
-            <input class="create-set__title-text" name="set_name" type="text" placeholder="Введите название, например, Биология. Фотосинтез и хемосинтез">
-            <input class="create-set__title-description" type="text" placeholder="Добавить описание...">
-            <input type="date" name="date">Дата
+            <label>
+                <input class="create-set__title-text" name="set_name" type="text" placeholder="Введите название, например, Биология. Фотосинтез и хемосинтез">
+            </label>
+            <label>
+                <input class="create-set__title-description" type="text" placeholder="Добавить описание...">
+            </label>
+            <label>
+                <input type="date" name="date">
+            </label>Дата
         </div>
 
     </div>
@@ -26,7 +29,9 @@
 <div class="word">
     <div class="container container--center">
 
+        <label>
             <input type="text" name="word_count" placeholder="Сколько слов">
+        </label>
         <div class="word__block">
             <div class="word__title">
                 <div class="word__num">1</div>
@@ -35,11 +40,15 @@
 
             <div class="word__area">
                 <div>
-                    <input type="text" class="word__termin word__termin--termin" name="english_word1">
+                    <label>
+                        <input type="text" class="word__term word__term--term" name="english_word1">
+                    </label>
                     <div class="word__description">Термин</div>
                 </div>
                 <div>
-                    <input type="text" class="word__termin" name="russian_word1">
+                    <label>
+                        <input type="text" class="word__term" name="russian_word1">
+                    </label>
                     <div class="word__description">Определение</div>
                 </div>
             </div>
@@ -52,11 +61,15 @@
 
             <div class="word__area">
                 <div>
-                    <input type="text" name="english_word2" class="word__termin word__termin--termin">
+                    <label>
+                        <input type="text" name="english_word2" class="word__term word__term--term">
+                    </label>
                     <div class="word__description">Термин</div>
                 </div>
                 <div>
-                    <input type="text" name="russian_word2" class="word__termin">
+                    <label>
+                        <input type="text" name="russian_word2" class="word__term">
+                    </label>
                     <div class="word__description">Определение</div>
                 </div>
             </div>
@@ -69,11 +82,15 @@
 
             <div class="word__area">
                 <div>
-                    <input type="text" name="english_word3" class="word__termin word__termin--termin">
+                    <label>
+                        <input type="text" name="english_word3" class="word__term word__term--term">
+                    </label>
                     <div class="word__description">Термин</div>
                 </div>
                 <div>
-                    <input type="text" name="russian_word3" class="word__termin">
+                    <label>
+                        <input type="text" name="russian_word3" class="word__term">
+                    </label>
                     <div class="word__description">Определение</div>
                 </div>
             </div>
@@ -86,11 +103,15 @@
 
             <div class="word__area">
                 <div>
-                    <input type="text" name="english_word4" class="word__termin word__termin--termin">
+                    <label>
+                        <input type="text" name="english_word4" class="word__term word__term--term">
+                    </label>
                     <div class="word__description">Термин</div>
                 </div>
                 <div>
-                    <input type="text" name="russian_word4" class="word__termin">
+                    <label>
+                        <input type="text" name="russian_word4" class="word__term">
+                    </label>
                     <div class="word__description">Определение</div>
                 </div>
             </div>
@@ -103,11 +124,15 @@
 
             <div class="word__area">
                 <div>
-                    <input type="text" name="english_word5" class="word__termin word__termin--termin">
+                    <label>
+                        <input type="text" name="english_word5" class="word__term word__term--term">
+                    </label>
                     <div class="word__description">Термин</div>
                 </div>
                 <div>
-                    <input type="text" name="russian_word5" class="word__termin">
+                    <label>
+                        <input type="text" name="russian_word5" class="word__term">
+                    </label>
                     <div class="word__description">Определение</div>
                 </div>
             </div>
@@ -116,13 +141,12 @@
         <div class="word__add">
             <button class="word__add-text" onclick="add_card()" type="button">+ Добавить карточку</button>
         </div>
-        </form>
     </div>
 </div>
-
+</form>
 
 <script>
-    word_count = 6;
+    let word_count = 6;
     function add_card() {
         document.getElementById('additional_cards').innerHTML += `<div class="word__block">\n` +
             `<div class="word__title">\n` +
@@ -131,19 +155,18 @@
             `</div>\n` +
             `<div class="word__area">\n` +
             `<div>\n` +
-            `<input type="text" name="english_word${word_count}" class="word__termin word__termin--termin">\n` +
+            `<input type="text" name="english_word${word_count}" class="word__term word__term--term">\n` +
             `<div class="word__description">Термин</div>\n` +
             `</div>\n` +
             `<div>\n` +
-            `<input type="text" name="russian_word${word_count}" class="word__termin">\n` +
+            `<input type="text" name="russian_word${word_count}" class="word__term">\n` +
             `<div class="word__description">Определение</div>\n` +
             `</div>\n` +
             `</div>\n` +
             `</div>`;
 
-        word_count = word_count + 1;
+        word_count++;
     }
-
 </script>
 
 @endsection

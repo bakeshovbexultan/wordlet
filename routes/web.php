@@ -39,3 +39,4 @@ Route::get('/logout', function () {
 //TODO Если пользователь не зареган, то view welcome, если зареган то view latest показывать как главную
 //TODO Сверстать страницу forgot-password
 //TODO Не применяются стили
+//TODO Если у класса termin, то все работает, если term, то нет. Изменяю в css
