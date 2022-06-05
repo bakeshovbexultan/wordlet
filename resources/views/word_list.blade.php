@@ -1,5 +1,4 @@
 @extends('layouts.layout')
-
 @section('content')
 
 <div class="word-list">
@@ -19,7 +18,7 @@
             </div>
             <div class="word-list__author--right">
                 <div class="word-list__author--btn">
-                    <a href="/delete/{{$set->id}}" class="word-list__author--btn-delete">
+                    <a href="/destroy/{{$set->id}}" class="word-list__author--btn-delete">
                         <i class="fa-solid fa-trash"></i>
                     </a>
                 </div>
@@ -53,7 +52,7 @@
             @endforeach
         </div>
 
-        <a href="#" class="word-list__words--btn">Добавить или удалить термины</a>
+        <a href="/edit/{{ $set->id }}" class="word-list__words--btn">Добавить или удалить термины</a>
     </div>
 </div>
 

@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Wordlet</title>
+
+    {{--  META  --}}
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wordlet</title>
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+
+    {{--  SITE ICON  --}}
     <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon">
     <link type="Image/x-icon" href="/favicon.ico" rel="icon">
-{{--    <script src="{{ URL::asset('js/script.js') }}"></script>--}}
-{{--    <link rel="stylesheet" href="{{ URL::asset('https://use.fontawesome.com/releases/v5.15.4/css/all.css') }}" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>--}}
+
+    {{--  FONTAWESOME  --}}
     <script src="{{ URL::asset('https://kit.fontawesome.com/2234da2371.js') }}" crossorigin="anonymous"></script>
+    {{--  CSS  --}}
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+    {{--  JS  --}}
+    <script src="{{ URL::asset('js/script.js') }}"></script>
 </head>
 <body>
 
@@ -20,11 +27,20 @@
         <a class="nav__logo" href="/">Wordlet</a>
         <a class="nav__link" href="/">Главная</a>
         <a class="nav__link" href="/library">Библиотека</a>
-        <a class="nav__link" href="/create-set">Создать модуль</a>
+        <a class="nav__link" href="/create">Создать модуль</a>
     </div>
+
     @auth
     <div class="profile">
-        <i class="fa-solid fa-bell"></i>
+        <label for="">
+            <input class="profile__search" type="text">
+        </label>
+        <button>
+            <i class="profile__notice fa-solid fa-bell"></i>
+        </button>
+        <button>
+            <img class="profile__avatar" src="{{ $user->avatar }}" alt="Аватар пользователя">
+        </button>
     </div>
     @endauth
 

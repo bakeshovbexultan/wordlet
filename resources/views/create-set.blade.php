@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="/store_set" method="POST">
+<form action="/store" method="POST">
     @csrf
 <div class="create-set">
     <div class="container container--center">
