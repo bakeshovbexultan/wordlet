@@ -72,6 +72,25 @@ body {
     height: 60px;
 }
 
+.profile {
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile__search {
+    width: 100px;
+}
+
+.profile__notice {
+    color: #fff;
+}
+
+.profile__avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+}
+
 /* Navigation */
 
 .nav {
@@ -298,6 +317,7 @@ body {
     position: relative;
     left: 200px;
     margin-bottom: 20px;
+
     font-size: 30px;
 }
 
@@ -306,11 +326,17 @@ body {
     width: 900px;
     padding: 20px;
 
-    color: #000;
-    margin-left: 200px;
-    background-color: #fff;
-    margin-bottom: 7px;
     border-radius: 5px;
+
+    color: #000;
+    background-color: #fff;
+
+    margin: 0 0 7px 200px;
+    border-bottom: 3px solid transparent;
+}
+
+.set__block:hover {
+    border-bottom: 3px solid #CEDAF3;
 }
 
 .set__word-count {
@@ -321,10 +347,6 @@ body {
 .set__name {
     font-weight: 700;
     font-size: 20px;
-}
-
-.set__block:hover {
-    border-bottom: 3px solid #CEDAF3;
 }
 
 /* Word List */
@@ -433,4 +455,116 @@ body {
 
 .word-list__words--btn:hover {
     background-color: #423ed8;
+}
+
+
+/* Welcome */
+
+.welcome__bg--image {
+    height: 100vh;
+    background-image: url("../uploads/blue-welcome-wallpaper.svg");
+    background-size: cover;
+}
+
+.welcome__bg--panel {
+    position: relative;
+    top: 50px;
+
+    height: 85vh;
+
+    border-radius: 25px;
+
+    background-image: url("../uploads/welcome/bg-panel.jpg");
+    background-size: cover;
+
+    padding-bottom: 30px;
+}
+
+.welcome__bg--text {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+}
+
+.welcome__bg--left {
+    width: 500px;
+}
+
+.welcome__bg--left-header {
+    color: #fff;
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.welcome__bg--left-text {
+    color: #fff;
+    font-size: 20px;
+}
+
+.welcome__bg--btn {
+    display: block;
+    width: 110px;
+    height: 60px;
+
+    background-color: #4255ff;
+    margin: 0 auto;
+    border-radius: 7px;
+
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+}
+
+.welcome__bg--btn:hover {
+    background-color: #423ed8;
+}
+
+.welcome__bg--sign-up {
+    color: inherit;
+}
+
+.welcome__title {
+    display: block;
+    width: 900px;
+    margin: 80px auto;
+
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.welcome__block {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.welcome__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 500px;
+    margin-right: 50px;
+}
+
+.welcome__block--header {
+    font-size: 30px;
+}
+
+.welcome__block--text {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.welcome__block--img {
+    width: 500px;
+    margin-right: 50px;
+}
+
+.welcome__header {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
 }
