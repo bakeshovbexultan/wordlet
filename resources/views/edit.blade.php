@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('content')
-{{--{{ dd($set->set_name) }}--}}
+
 <form action="/update/{{ $set->id }}" method="POST">
 @csrf
 <div class="create-set">

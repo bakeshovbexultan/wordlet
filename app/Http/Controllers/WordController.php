@@ -34,7 +34,6 @@ class WordController extends Controller
             'set_name' => $request->set_name
         ]);
 
-
         for ($i = 1; $i <= $request->word_count; $i++) {
             $valueEn = 'english_word' . $i;
             $valueRu = 'russian_word' . $i;
@@ -74,19 +73,29 @@ class WordController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request->words, $id);
+        if (!empty($request->set_name)) {
+            DB::table('sets')->where('id', $id)->update(['set_name' => $request->set_name]);
+        }
 
-        for ($i = 1; $i < $request->word_count; $i++) {
+        if (!empty($request->date)) {
+            DB::table('sets')->where('id', $id)->update(['date' => $request->date]);
+        }
+
+        for ($i = 1; $i <= $request->word_count; $i++) {
             $valueEn = 'english_word' . $i;
             $valueRu = 'russian_word' . $i;
-
-            DB::table('words')
-                ->where('set_id', $request->id)
-                ->update(
-                    ['english_word' => $request->$valueEn,
-                    'russian_word' => $request->$valueRu]
-                );
+            DB::table('words')->where('set_id', $id)
+                ->where('id', $i)
+                ->update([
+                    'english_word' => $request->$valueEn,
+                    'russian_word' => $request->$valueRu
+                ]);
         }
+
+        $id = Auth::user()->id;
+        $user = User::find($id);
+
+        return redirect('/library', ['user', $user]);
     }
 
     public function destroy($id)
@@ -96,6 +105,7 @@ class WordController extends Controller
 
         $id = Auth::user()->id;
         $user = User::find($id);
+
         return redirect('/library', ['user' => $user]);
     }
 }
