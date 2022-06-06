@@ -1,9 +1,8 @@
 @extends('layouts.layout')
-
 @section('content')
 
 <form action="/store" method="POST">
-    @csrf
+@csrf
 <div class="create-set">
     <div class="container container--center">
         <div class="create-set__header">
@@ -12,15 +11,19 @@
         </div>
 
         <div class="create-set__title">
-            <label>
-                <input class="create-set__title-text" name="set_name" type="text" placeholder="Введите название, например, Биология. Фотосинтез и хемосинтез">
-            </label>
-            <label>
-                <input class="create-set__title-description" type="text" placeholder="Добавить описание...">
-            </label>
-            <label>
-                <input type="date" name="date">
-            </label>Дата
+            <div class="create-set__title--left">
+                <label>
+                    <input class="create-set__title-text" name="set_name" type="text" placeholder="Введите название, например, Биология. Фотосинтез и хемосинтез">
+                </label>
+                <label>
+                    <input class="create-set__title-description" type="text" placeholder="Добавить описание...">
+                </label>
+            </div>
+            <div>
+                <label>Дата
+                    <input type="date" name="date">
+                </label>
+            </div>
         </div>
 
     </div>
@@ -141,6 +144,7 @@
         <div class="word__add">
             <button class="word__add-text" onclick="add_card()" type="button">+ Добавить карточку</button>
         </div>
+        <input class="create-set__btn create-set__btn--right" type="submit" value="Создать">
     </div>
 </div>
 </form>

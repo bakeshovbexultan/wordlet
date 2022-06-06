@@ -1,12 +1,14 @@
 @extends('layouts.layout')
 @section('content')
 
-<div class="achiev">
+<div class="achieve">
 	<div class="container">
-		<h2 class="achiev__header">Достижения</h2>
-		<div class="achiev__block">
+		<h2 class="achieve__header">Достижения</h2>
+
+		<div class="achieve__block">
 
 		</div>
+
 	</div>
 </div>
 

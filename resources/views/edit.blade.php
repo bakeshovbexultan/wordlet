@@ -1,25 +1,29 @@
 @extends('layouts.layout')
 @section('content')
-
+{{--{{ dd($set->set_name) }}--}}
 <form action="/update/{{ $set->id }}" method="POST">
 @csrf
 <div class="create-set">
     <div class="container container--center">
         <div class="create-set__header">
-            <h4>Назад к модулю</h4>
+            <h4><a href="/show/{{ $set->id }}">Назад к модулю</a></h4>
             <input class="create-set__btn" type="submit" value="Готово">
         </div>
 
         <div class="create-set__title">
-            <label>
-                <input class="create-set__title-text" value="{{ $set->set_name }}" name="set_name" type="text" placeholder="Введите название, например, Биология. Фотосинтез и хемосинтез">
-            </label>
-            <label>
-                <input class="create-set__title-description" type="text" placeholder="Добавить описание...">
-            </label>
-            <label>
-                <input type="date" name="date" value="{{ $set->date }}">
-            </label>Дата
+            <div class="create-set__title--left">
+                <label>
+                    <input class="create-set__title-text" name="set_name" type="text" value="{{ $set->set_name }}" placeholder="Введите название, например, Биология. Фотосинтез и хемосинтез">
+                </label>
+                <label>
+                    <input class="create-set__title-description" type="text" value="{{ $set->description }}" placeholder="Добавить описание...">
+                </label>
+            </div>
+            <div>
+                <label>Дата
+                    <input type="date" name="date" value="{{ $set->date }}">
+                </label>
+            </div>
         </div>
 
     </div>
@@ -56,6 +60,7 @@
                 </div>
             </div>
         </div>
+
         <?php $count++; ?>
 
         @endforeach
@@ -64,12 +69,14 @@
         <div class="word__add">
             <button class="word__add-text" onclick="add_card()" type="button">+ Добавить карточку</button>
         </div>
+        <input class="create-set__btn create-set__btn--right" type="submit" value="Готово">
     </div>
 </div>
 </form>
 
 <script>
     let word_count = 6;
+
     function add_card() {
         document.getElementById('additional_cards').innerHTML += `<div class="word__block">\n` +
             `<div class="word__title">\n` +

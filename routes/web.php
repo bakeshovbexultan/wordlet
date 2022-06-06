@@ -28,5 +28,3 @@ Route::middleware('auth')->group(function () {
 Route::get('/logout', function () {
     Auth::logout();
 });
-
-//TODO Если пользователь не зареган, то view welcome, если зареган то view latest показывать как главную

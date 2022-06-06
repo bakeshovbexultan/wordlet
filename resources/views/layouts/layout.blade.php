@@ -44,7 +44,7 @@
             <i class="profile__notice fa-solid fa-bell"></i>
         </button>
         <button>
-            <img class="profile__avatar" src="{{ $user->avatar }}" alt="Аватар пользователя">
+            <img class="profile__avatar" src="{{ $user->avatar }}" alt="">
         </button>
     </div>
     @endauth

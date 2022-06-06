@@ -1191,6 +1191,7 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/* /Reset style */
 * {
     font-size: 17px;
 }
@@ -1302,13 +1303,13 @@ body {
     background-color: #FFDC62;
 }
 /* Achievements */
-.achiev__header {
+.achieve__header {
     margin: 35px 0 20px 0;
 
     font-size: 15px;
     font-weight: 700;
 }
-.achiev__block {
+.achieve__block {
     width: 100%;
     height: 240px;
 
@@ -1330,7 +1331,6 @@ body {
     margin-bottom: 60px;
 }
 .create-set__btn {
-    /*display: block;*/
     padding: 15px 25px 15px 25px;
 
     background-color: #3ccfcf;
@@ -1340,13 +1340,25 @@ body {
 .create-set__btn:hover {
     cursor: pointer;
 }
+.create-set__btn--right {
+    position: absolute;
+    right: 200px;
+
+}
 .create-set__header-text {
     font-size: 25px;
+}
+.create-set__title {
+    display: flex;
+}
+.create-set__title--left {
+    margin-right: 50px;
 }
 .create-set__title-text {
     display: block;
     margin-bottom: 60px;
     width: 800px;
+
     font-size: 25px;
     border-bottom: 3px solid black;
 
@@ -1356,6 +1368,7 @@ body {
     display: block;
     margin-bottom: 60px;
     width: 800px;
+
     font-size: 25px;
     border-bottom: 3px solid black;
 
@@ -1387,9 +1400,10 @@ body {
 .word__term {
     display: block;
     width: 500px;
+
+    margin: 0 20px 10px 0;
+
     border-bottom: 3px solid #000;
-    margin-right: 20px;
-    margin-bottom: 10px;
 }
 .word__term--term {
     margin-right: 20px;
@@ -1403,9 +1417,12 @@ body {
 .word__add {
     width: 100%;
     height: 100px;
+
     background-color: #fff;
+
     text-align: center;
     border-radius: 10px;
+    margin-bottom: 40px;
 }
 .word__add-text {
     line-height: 100px;
@@ -1417,6 +1434,7 @@ body {
 }
 .word__add:hover {
     color: #FFCD1F;
+    transition: .1s;
 }
 .word__add:hover .word__add-text {
     border-bottom: 4px solid #FFCD1F;
@@ -1463,9 +1481,6 @@ body {
 .word-list {
     margin-top: 30px;
 }
-.word-list__header {
-
-}
 .word-list__header-text {
     font-size: 30px;
     margin-bottom: 30px;
@@ -1481,14 +1496,9 @@ body {
     justify-content: space-between;
     margin-bottom: 30px;
 }
-.word-list__author--left {
-
-}
 .word-list__author--right {
     display: flex;
 }
-.word-list__author-avatar {}
-.word-list__author-name {}
 .word-list__author--btn {
     margin-left: 10px;
 }
@@ -1504,7 +1514,6 @@ body {
     font-size: 20px;
     font-weight: 700;
 }
-.word-list__words-sorting {}
 .word-list__words {
     display: flex;
     flex-direction: column;
@@ -1535,13 +1544,15 @@ body {
     display: block;
     width: 350px;
     height: 60px;
-    background-color: #4255ff;
+
     margin: 0 auto;
+
+    background-color: #4255ff;
     border-radius: 5px;
 
+    color: #fff;
     text-align: center;
     line-height: 60px;
-    color: #fff;
 }
 .word-list__words--btn:hover {
     background-color: #423ed8;
@@ -1566,19 +1577,21 @@ body {
     padding-bottom: 30px;
 }
 .welcome__bg--text {
-    height: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+
+    height: 100%;
 
 }
 .welcome__bg--left {
     width: 500px;
 }
 .welcome__bg--left-header {
+    margin-bottom: 30px;
+
     color: #fff;
     font-size: 50px;
-    margin-bottom: 30px;
     font-weight: 700;
 }
 .welcome__bg--left-text {
@@ -1738,7 +1751,9 @@ body {
 .register__submit {
     width: 100%;
     height: 50px;
+
     border-radius: 5px;
+
     color: #fff;
     background-color: #3CCFCF;
     cursor: pointer;

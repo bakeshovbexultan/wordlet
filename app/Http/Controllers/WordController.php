@@ -74,7 +74,7 @@ class WordController extends Controller
 
     public function update(Request $request, $id)
     {
-        dd($request->id);
+        dd($request->words, $id);
 
         for ($i = 1; $i < $request->word_count; $i++) {
             $valueEn = 'english_word' . $i;

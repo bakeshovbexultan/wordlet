@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->date('date');
             $table->string('set_name');
+            $table->string('description')->nullable();
             $table->string('user_id');
             $table->timestamps();
         });
