@@ -3,24 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Models\Set;
-use App\Models\Word;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class WordController extends Controller
 {
-    //TODO переместить метод в другой класс
-    public function create_set() {
-        return view('create-set');
+    public function index()
+    {
+        $sets = Set::where('user_id', Auth::user()->id)->get();
+
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('/library', ['sets' => $sets, 'user' => $user]);
     }
 
-    public function store_set(Request $request) {
+    public function create()
+    {
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('create-set', ['user' => $user]);
+    }
+
+    public function store(Request $request)
+    {
         $set_id = DB::table('sets')->insertGetid([
             'user_id' => Auth::user()->id,
             'date' => $request->date,
             'set_name' => $request->set_name
         ]);
+
 
         for ($i = 1; $i <= $request->word_count; $i++) {
             $valueEn = 'english_word' . $i;
@@ -33,18 +46,56 @@ class WordController extends Controller
             ]);
         }
 
-        return redirect('/library');
+        $id = Auth::user()->id;
+        $user = User::find($id);
 
+        return redirect('/library', ['user' => $user]);
     }
 
-    //TODO переместить метод в другой класс
-    public function word_list($id) {
+    public function show($id)
+    {
         $set = Set::find($id);
         $word_count = Set::find($id)->words->count();
-        return view('word_list', ['set' => $set, 'word_count' => $word_count]);
+
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('word_list', ['set' => $set, 'word_count' => $word_count, 'user' => $user]);
     }
 
-    public function latest($id) {
-        return view('latest');
+    public function edit($id)
+    {
+        $set = Set::find($id);
+        $word_count = Set::find($id)->words->count();
+
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return view('edit', ['set' => $set, 'word_count' => $word_count, 'user' => $user]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        dd($request->id);
+
+        for ($i = 1; $i < $request->word_count; $i++) {
+            $valueEn = 'english_word' . $i;
+            $valueRu = 'russian_word' . $i;
+
+            DB::table('words')
+                ->where('set_id', $request->id)
+                ->update(
+                    ['english_word' => $request->$valueEn,
+                    'russian_word' => $request->$valueRu]
+                );
+        }
+    }
+
+    public function destroy($id)
+    {
+        DB::table('sets')->where('id', $id)->delete();
+        DB::table('words')->where('set_id', $id)->delete();
+
+        $id = Auth::user()->id;
+        $user = User::find($id);
+        return redirect('/library', ['user' => $user]);
     }
 }

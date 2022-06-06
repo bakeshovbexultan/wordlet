@@ -82,7 +82,8 @@ body {
 }
 
 .profile__notice {
-    color: #fff;
+    color: #C0C0C0;
+    margin-right: 10px;
 }
 
 .profile__avatar {
@@ -93,26 +94,43 @@ body {
 
 /* Navigation */
 
-.nav {
-    padding: 13px;
+.nav__li {
+    display: block;
+    float: left;
 }
 
 .nav__logo {
-    margin: 30px 20px 0 10px;
+    display: block;
+    margin-right: 20px;
+
+    position: relative;
+    top: 8px;
+    left: 14px;
+
     font-size: 30px;
     font-weight: bold;
+    color: #4255ff;
 }
 
 .nav__link {
+    display: block;
+    padding: 14px 16px 10px;
+
     text-decoration: none;
     color: #2E3856;
-    margin-right: 20px;
     font-size: 15px;
 }
 
-.nav__link:hover {
-    text-decoration: underline;
-    text-decoration-color: #4255FF;
+.nav__li .nav__link:hover {
+    border-bottom: 3px solid #A8B1FF;
+}
+
+.nav__li.nav__active .nav__link:hover {
+    border-bottom: 0 solid transparent;
+}
+
+.nav__active {
+    border-bottom: 3px solid #A8B1FF;
 }
 
 /* Auth */
@@ -205,10 +223,6 @@ body {
 
 .create-set__header-text {
     font-size: 25px;
-}
-
-.create-set__title {
-
 }
 
 .create-set__title-text {

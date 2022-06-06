@@ -19,7 +19,7 @@
                         <p class="welcome__bg--left-text">Шаг за шагом изучайте любой предмет</p>
                     </div>
                     <div class="welcome__bg--right">
-                        <button class="welcome__bg--btn"><a class="welcome__bg--sign-up" href="#">Начать</a></button>
+                        <button class="welcome__bg--btn"><a class="welcome__bg--sign-up" href="/register">Начать</a></button>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
 
             <div class="welcome__start">
                 <h3 class="welcome__header">Готовы улучшить свою успеваемость?</h3>
-                <button class="welcome__bg--btn"><a class="welcome__bg--sign-up" href="#">Начать</a></button>
+                <button class="welcome__bg--btn"><a class="welcome__bg--sign-up" href="/register">Начать</a></button>
             </div>
         </div>
     </div>

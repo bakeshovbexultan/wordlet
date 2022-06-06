@@ -23,12 +23,17 @@
 <body>
 
 <header class="header">
-    <div class="nav">
-        <a class="nav__logo" href="/">Wordlet</a>
-        <a class="nav__link" href="/">Главная</a>
-        <a class="nav__link" href="/library">Библиотека</a>
-        <a class="nav__link" href="/create">Создать модуль</a>
-    </div>
+    <ul class="nav">
+        <li class="nav__li"><a class="nav__logo" href="/">Wordlet</a></li>
+        <li class="nav__li nav__active"><a class="nav__link" href="/">Главная</a></li>
+        @auth
+            <li class="nav__li"><a class="nav__link" href="/library">Библиотека</a></li>
+            <li class="nav__li"><a class="nav__link" href="/create">Создать модуль</a></li>
+        @endauth
+        @guest
+            <li class="nav__li"><a class="nav__link" href="/create">Создать модуль</a></li>
+        @endguest
+    </ul>
 
     @auth
     <div class="profile">
