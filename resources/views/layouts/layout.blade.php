@@ -55,6 +55,20 @@
 
 </header>
 
+{{--<div id="profile-menu">--}}
+{{--    <div class="profile-menu__info">--}}
+{{--        <img src="" alt="">--}}
+{{--        <span>beksultan</span>--}}
+{{--        <span>beksultan@e.com</span>--}}
+{{--    </div>--}}
+{{--    <ul>--}}
+{{--        <li>Профиль</li>--}}
+{{--        <li>Настройки</li>--}}
+{{--        <li>Ночной режим</li>--}}
+{{--        <li>Настройки</li>--}}
+{{--    </ul>--}}
+{{--</div>--}}
+
 @yield('content')
 
 </body>

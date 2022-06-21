@@ -77,6 +77,10 @@ body {
     justify-content: space-between;
 }
 
+#profile-menu {
+
+}
+
 .profile__search {
     width: 100px;
 }
